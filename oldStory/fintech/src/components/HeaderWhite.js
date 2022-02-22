@@ -7,6 +7,7 @@ text-align: center;
 padding:20px;
 font-size:20px;
 font-weight:bold;
+background-color:blue; //vscode-styled-components 확장
 `;
 
 const HeaderWhite = (props) => {
