@@ -42,7 +42,7 @@ for (car of cars) {
 }
 
 cars.map((car) => {
-    if (car.name === "bmw") {  //===하면 타입을 좀 더 명확하게 구분을 하겠다는 의미임. 이거 사용 권장한다. ==말고.^^ js는 타입 명시를 안하잖니
+    if (car.name === "bmw") {
         console.log("차량이 있습니다.")
     }
 });
