@@ -8,6 +8,7 @@ const Welcome = (props) => {
     console.log(props);
     return (
         <WelcomeBlock>
+            <h1>안녕? 여긴 바로 "나"의 홈페이지이다.</h1>
             <div>hello, world!</div>
             <div>안녕? {props.username}!!</div>
             <div>나이: {props.age}</div> <br></br>

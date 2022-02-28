@@ -1,26 +1,54 @@
-import Welcome from "./components/Welcome";
-import { useState } from "react";
-import ListComponent from "./components/ListComponent"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import ListComponent from "./components/ListComponent";
 import HeaderWhite from "./components/HeaderWhite";
+import Welcome from "./components/Welcome";
+import AxiosTest from "./pages/AxiosTest";
+import NewsApiPage from "./pages/NewsApiPage"
+import AuthPage from "./pages/AuthPage";
+import AuthResult from "./pages/AuthResult";
+import MainPage from "./pages/MainPage"
+import BalancePage from "./pages/BalancePage";
+import QrCodePage from "./pages/QrCodePage";
+import QRCodeReader from "./pages/QrCodeReadPage";
+
 
 function App() {
-  let username = "미입력"
-  let [usernameWithstate, setUsernameWithState] = useState("초기값");
-
-  const handleInputChange = (e) => {
-    setUsernameWithState(e.target.value);
-    console.log(username);
-  }
-  return (<div>
-    <HeaderWhite title="환경설정" />
-    <h1>안녕? 여긴 바로 황진희의 홈페이지이다.</h1>
-    이름: <input onChange={handleInputChange}></input>
-    <h3>{usernameWithstate}</h3>
-
-    <ListComponent />
-
-
-  </div>);
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/test" element={<ListComponent />}>
+        </Route>
+      </Routes>
+      <Routes>
+        <Route path="/welcome" element={<Welcome />}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/axiostest" element={<AxiosTest />}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/newsapipage" element={<NewsApiPage />}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/" element={<AuthPage />}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/authResult" element={<AuthResult />}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/main" element={<MainPage />}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/balance" element={<BalancePage />}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/qr" element={<QrCodePage />}></Route>
+      </Routes>
+      <Routes>
+        <Route path="/QRreader" element={<QRCodeReader />}></Route>
+      </Routes> 
+    </BrowserRouter>
+  );
 }
 
 export default App;
